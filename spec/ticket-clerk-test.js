@@ -11,4 +11,10 @@ describe("#balance", function() {
   it("array [25, 25] to return 50", function() {
     expect(balance([25, 25])).toEqual(50);
   });
+  it("array [25, 25] to return 50", function() {
+    expect(balance([25, 75])).toEqual(100);
+  });
+  it("array [25, 25, 50, 50 75] to return 225", function() {
+    expect(balance([25, 25, 50, 50, 75])).toEqual(225);
+  });
 });
