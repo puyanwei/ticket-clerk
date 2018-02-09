@@ -8,7 +8,7 @@ TicketClerk.prototype.entry = function(array) {
       this.till[25]++;
     }
     if (array[i] === 50) {
-      this.till[50]++;
+      this.fiftyNote();
     }
     if (array[i] === 100) {
       this.till[100]++;
@@ -20,7 +20,14 @@ TicketClerk.prototype.fiftyNote = function() {
   if (this.till[25] > 0) {
     this.till[25]--;
     this.till[50]++;
-    return true;
+  }
+  return false;
+};
+
+TicketClerk.prototype.hundredNote = function() {
+  if (this.till[25] > 0 && this.till[50] > 0) {
+    this.till[25]--;
+    this.till[50]--;
   }
   return false;
 };
