@@ -1,6 +1,6 @@
 var ticketClerk = function(array) {
   if (array[0] === 25) {
-    return true;
+    return "YES";
   }
-  return false;
+  return "NO";
 };
