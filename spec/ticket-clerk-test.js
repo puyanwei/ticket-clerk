@@ -16,8 +16,12 @@ describe("#TicketClerk", function() {
     });
   });
   describe("#fiftyNote", function() {
-    it("entering 50 returns 25", function() {
+    it("entering 50 returns false because cannot give change", function() {
       expect(ticketClerk.fiftyNote(50)).toBe(false);
+    });
+    it("entering 50 with one 25 in the till returns true because it can give change", function() {
+      ticketClerk.till = { 25: 1, 50: 0, 100: 0 };
+      expect(ticketClerk.fiftyNote(50)).toBe(true);
     });
   });
 });

@@ -20,6 +20,7 @@ TicketClerk.prototype.fiftyNote = function(note) {
   if (note === 50 && this.till[25] > 0) {
     this.till[25]--;
     this.till[50]++;
+    return true;
   }
   return false;
 };
