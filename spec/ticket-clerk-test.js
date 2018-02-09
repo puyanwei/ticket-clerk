@@ -15,7 +15,16 @@ describe("#TicketClerk", function() {
       expect(ticketClerk.till).toEqual({ 25: 4, 50: 2, 100: 1 });
     });
   });
+  describe("#getChange", function() {
+    it("entering 50 returns 25", function() {
+      expect(ticketClerk.getChange(50)).toEqual(25);
+    });
+    it("entering 50 returns 25", function() {
+      expect(ticketClerk.getChange(100)).toEqual(75);
+    });
+  });
 });
+
 // My steps;
 // 1. create function that keeps track of notes in till
 // 2. create function that gives out change
