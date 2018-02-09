@@ -4,3 +4,7 @@ var ticketClerk = function(array) {
   }
   return "NO";
 };
+
+var balance = function(array) {
+  return array.reduce((a, b) => a + b, 0);
+};

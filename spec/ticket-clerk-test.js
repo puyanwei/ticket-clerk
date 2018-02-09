@@ -6,3 +6,9 @@ describe("#ticketClerk", function() {
     expect(ticketClerk([50])).toEqual("NO");
   });
 });
+
+describe("#balance", function() {
+  it("array [25, 25] to return 50", function() {
+    expect(balance([25, 25])).toEqual(50);
+  });
+});
