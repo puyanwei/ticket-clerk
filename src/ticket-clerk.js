@@ -17,11 +17,9 @@ TicketClerk.prototype.entry = function(array) {
 };
 
 TicketClerk.prototype.fiftyNote = function(note) {
-  if (note === 50) {
-    if (this.till[25] > 0) {
-      this.till[25]--;
-      this.till[50]++;
-    }
-    return false;
+  if (note === 50 && this.till[25] > 0) {
+    this.till[25]--;
+    this.till[50]++;
   }
+  return false;
 };
