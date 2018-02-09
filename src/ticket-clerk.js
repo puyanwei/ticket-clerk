@@ -16,11 +16,12 @@ TicketClerk.prototype.entry = function(array) {
   }
 };
 
-TicketClerk.prototype.getChange = function(note) {
+TicketClerk.prototype.fiftyNote = function(note) {
   if (note === 50) {
-    return 25;
-  }
-  if (note === 100) {
-    return 75;
+    if (this.till[25] > 0) {
+      this.till[25]--;
+      this.till[50]++;
+    }
+    return false;
   }
 };
