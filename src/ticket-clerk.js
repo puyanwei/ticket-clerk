@@ -30,5 +30,9 @@ TicketClerk.prototype.hundredNote = function() {
     this.till[50]--;
     this.till[100]++;
   }
+  if (this.till[25] > 2) {
+    this.till[25] -= 3;
+    this.till[100]++;
+  }
   return false;
 };
