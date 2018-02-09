@@ -3,9 +3,8 @@ describe("#TicketClerk", function() {
     ticketClerk = new TicketClerk();
   });
   describe("#entry", function() {
-    it("shows a hash of the money in the till", function() {
-      ticketClerk.entry([25]);
-      expect(ticketClerk.till).toEqual({ 25: 1, 50: 0, 100: 0 });
+    it("shows a hash of the money in the till, which has zero of each denominator", function() {
+      expect(ticketClerk.till).toEqual({ 25: 0, 50: 0, 100: 0 });
     });
   });
 });
