@@ -7,5 +7,11 @@ TicketClerk.prototype.entry = function(array) {
     if (array[i] === 25) {
       this.till[25]++;
     }
+    if (array[i] === 50) {
+      this.till[50]++;
+    }
+    if (array[i] === 100) {
+      this.till[100]++;
+    }
   }
 };
