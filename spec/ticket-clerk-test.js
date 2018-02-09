@@ -1,26 +1,16 @@
-describe("#ticketClerk", function() {
-  it("array [25] to return YES as there is change", function() {
-    expect(ticketClerk([25])).toEqual("YES");
+describe("#TicketClerk", function() {
+  beforeEach(function() {
+    var ticketClerk = new TicketClerk();
   });
-  it("array [50] to return NO, as there is no change available", function() {
-    expect(ticketClerk([50])).toEqual("NO");
-  });
-  it("array [25, 25] to return YES, as there is change", function() {
-    expect(ticketClerk([25, 25])).toEqual("YES");
-  });
-  it("array [25, 25] to return YES, as there is no change available", function() {
-    expect(ticketClerk([25, 50])).toEqual("YES");
+  describe("#entry", function() {
+    it("shows a hash of the money in the till", function() {
+      expect(ticketClerk.entry([25, 50, 100]).toEqual({ 25: 1, 50: 1, 75: 1 }));
+    });
   });
 });
 
-describe("#balance", function() {
-  it("array [25, 25] to return 50", function() {
-    expect(balance([25, 25])).toEqual(50);
-  });
-  it("array [25, 25] to return 50", function() {
-    expect(balance([25, 75])).toEqual(100);
-  });
-  it("array [25, 25, 50, 50 75] to return 225", function() {
-    expect(balance([25, 25, 50, 50, 75])).toEqual(225);
-  });
-});
+// My steps;
+// 1. create function that keeps track of notes in till
+// 2. create function that gives out change
+// 3. create function that updates the till
+// 4. create function that determines whether till can give change and return YES or NO
