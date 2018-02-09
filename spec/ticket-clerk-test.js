@@ -23,6 +23,11 @@ describe("#TicketClerk", function() {
       ticketClerk.till = { 25: 1, 50: 0, 100: 0 };
       expect(ticketClerk.fiftyNote(50)).toBe(true);
     });
+    it("deducts a 25 note and adds in a 50", function() {
+      ticketClerk.till = { 25: 1, 50: 0, 100: 0 };
+      ticketClerk.fiftyNote(50);
+      expect(ticketClerk.till).toEqual({ 25: 0, 50: 1, 100: 0 });
+    });
   });
 });
 
