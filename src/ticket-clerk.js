@@ -3,28 +3,21 @@ var TicketClerk = function() {
 };
 
 TicketClerk.prototype.entry = function(array) {
-  // for (var i = 0; i < array.length; i++) {
-  //   if (array[i] === 25) {
-  //     this.till[25]++;
-  //   }
-  //   if (array[i] === 50) {
-  //     this.fiftyNote();
-  //   }
-  //   if (array[i] === 100) {
-  //     this.hundredNote();
-  //   }
-  // }
-  array.forEach(function(note) {
+  array.forEach(note => {
     if (note === 25) {
       this.till[25]++;
     }
     if (note === 50) {
-      fiftyNote();
+      if (this.fiftyNote() === false) {
+        return false;
+      }
     }
     if (note === 100) {
-      hundredNote();
+      if (this.hundredNote() === false) {
+        return false;
+      }
     }
-    hundredNote();
+    return "YES";
   });
 };
 
@@ -33,7 +26,7 @@ TicketClerk.prototype.fiftyNote = function() {
     this.till[25]--;
     this.till[50]++;
   }
-  return false;
+  return "NO";
 };
 
 TicketClerk.prototype.hundredNote = function() {
@@ -46,5 +39,5 @@ TicketClerk.prototype.hundredNote = function() {
     this.till[25] -= 3;
     this.till[100]++;
   }
-  return false;
+  return "NO";
 };
