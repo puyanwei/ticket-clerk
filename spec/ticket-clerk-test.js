@@ -8,14 +8,14 @@ describe("#TicketClerk", function() {
     });
   });
 
-  fdescribe("#sell", function() {
+  describe("#sell", function() {
     it("entering 25, 25, 50 should return 'YES' as it can give change", function() {
-      ticketClerk.sell([25, 25, 50]);
-      expect(ticketClerk.sell).toEqual("YES");
+      const result = ticketClerk.sell([25, 25, 50, 50]);
+      expect(result).toEqual("YES");
     });
     it("entering 50, 25, 50 should return 'NO' as it cannot give change", function() {
-      ticketClerk.sell([50, 25, 50]);
-      expect(ticketClerk.sell).toEqual("NO");
+      const result = ticketClerk.sell([50, 25, 50]);
+      expect(result).toEqual("NO");
     });
   });
 

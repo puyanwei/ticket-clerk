@@ -6,8 +6,7 @@ TicketClerk.prototype.sell = function(array) {
   for (var i = 0; i < array.length; i++) {
     if (this.canMakeChange(array[i])) {
       this.giveChange(array[i]);
-    }
-    if (!this.canMakeChange(array[i])) {
+    } else {
       return "NO";
     }
   }
@@ -15,13 +14,15 @@ TicketClerk.prototype.sell = function(array) {
 };
 
 TicketClerk.prototype.canMakeChange = function(note) {
+  if (note === 25) {
+    return true;
+  }
   if (note === 50) {
     return this.till[25] > 0;
   }
   if (note === 100) {
     return this.canGiveFiftyTwentyFive() || this.canGiveThreeTwentyFives();
   }
-  return true;
 };
 
 TicketClerk.prototype.giveChange = function(note) {
