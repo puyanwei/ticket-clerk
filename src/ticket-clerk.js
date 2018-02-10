@@ -3,17 +3,29 @@ var TicketClerk = function() {
 };
 
 TicketClerk.prototype.entry = function(array) {
-  for (var i = 0; i < array.length; i++) {
-    if (array[i] === 25) {
+  // for (var i = 0; i < array.length; i++) {
+  //   if (array[i] === 25) {
+  //     this.till[25]++;
+  //   }
+  //   if (array[i] === 50) {
+  //     this.fiftyNote();
+  //   }
+  //   if (array[i] === 100) {
+  //     this.hundredNote();
+  //   }
+  // }
+  array.forEach(function(note) {
+    if (note === 25) {
       this.till[25]++;
     }
-    if (array[i] === 50) {
-      this.fiftyNote();
+    if (note === 50) {
+      fiftyNote();
     }
-    if (array[i] === 100) {
-      this.till[100]++;
+    if (note === 100) {
+      hundredNote();
     }
-  }
+    hundredNote();
+  });
 };
 
 TicketClerk.prototype.fiftyNote = function() {
