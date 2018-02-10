@@ -3,14 +3,15 @@ var TicketClerk = function() {
 };
 
 TicketClerk.prototype.sell = function(array) {
-  array.forEach(note => {
-    if (this.canMakeChange()) {
-      this.giveChange(note);
-    } else {
+  for (var i = 0; i < array.length; i++) {
+    if (this.canMakeChange(array[i])) {
+      this.giveChange(array[i]);
+    }
+    if (!this.canMakeChange(array[i])) {
       return "NO";
     }
-    return "YES";
-  });
+  }
+  return "YES";
 };
 
 TicketClerk.prototype.canMakeChange = function(note) {
