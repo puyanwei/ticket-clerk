@@ -14,11 +14,11 @@ TicketClerk.prototype.sell = function(array) {
 };
 
 TicketClerk.prototype.canMakeChange = function(note) {
-  if (note === 100) {
-    return this.canGiveFiftyTwentyFive() || this.canGiveThreeTwentyFives();
-  }
   if (note === 50) {
     return this.till[25] > 0;
+  }
+  if (note === 100) {
+    return this.canGiveFiftyTwentyFive() || this.canGiveThreeTwentyFives();
   }
   return true;
 };
