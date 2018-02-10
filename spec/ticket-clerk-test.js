@@ -10,22 +10,16 @@ describe("#TicketClerk", function() {
       ticketClerk.entry([25, 25, 50]);
       expect(ticketClerk.till).toEqual({ 25: 1, 50: 1, 100: 0 });
     });
-    // it("entering 25, 25, 50 should return true as it can return change", function() {
-    //   expect(ticketClerk.entry([25, 25, 50])).toBe(true);
+    // it("entering 25, 25, 50 should return 'YES' as it can return change", function() {
+    //   expect(ticketClerk.entry([25, 25, 50])).toEqual("YES");
     // });
   });
 
   describe("#fiftyNote", function() {
-    it("entering 50 with nothing in the till returns 'NO'", function() {
-      expect(ticketClerk.fiftyNote()).toEqual("NO");
-    });
     it("giving 50 deducts a 25 note and adds in a 50 note", function() {
       ticketClerk.till = { 25: 1, 50: 0, 100: 0 };
       ticketClerk.fiftyNote();
       expect(ticketClerk.till).toEqual({ 25: 0, 50: 1, 100: 0 });
-    });
-    it("returns 'NO' when there is no change available", function() {
-      expect(ticketClerk.fiftyNote()).toEqual("NO");
     });
   });
 
@@ -42,9 +36,6 @@ describe("#TicketClerk", function() {
       ticketClerk.till = { 25: 6, 50: 0, 100: 0 };
       ticketClerk.hundredNote();
       expect(ticketClerk.till).toEqual({ 25: 3, 50: 0, 100: 1 });
-    });
-    it("returns 'NO' when there is no change available", function() {
-      expect(ticketClerk.hundredNote()).toEqual("NO");
     });
   });
 });

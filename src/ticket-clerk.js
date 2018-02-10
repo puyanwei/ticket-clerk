@@ -8,25 +8,21 @@ TicketClerk.prototype.entry = function(array) {
       this.till[25]++;
     }
     if (note === 50) {
-      if (this.fiftyNote() === false) {
-        return false;
+      if (this.till[25] < 1) {
+        return "NO";
       }
+      this.fiftyNote();
     }
     if (note === 100) {
-      if (this.hundredNote() === false) {
-        return false;
-      }
+      return this.hundredNote();
     }
     return "YES";
   });
 };
 
 TicketClerk.prototype.fiftyNote = function() {
-  if (this.till[25] > 0) {
-    this.till[25]--;
-    this.till[50]++;
-  }
-  return "NO";
+  this.till[25]--;
+  this.till[50]++;
 };
 
 TicketClerk.prototype.hundredNote = function() {
