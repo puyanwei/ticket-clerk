@@ -10,7 +10,7 @@ Can Vasya sell a ticket to each person and give the change if he initially has n
 
 Return YES, if Vasya can sell a ticket to each person and give the change with the bills he has at hand at that moment. Otherwise return NO.
 
-### Examples
+## Examples
 
 ```
 tickets([25, 25, 50]) // => YES
@@ -18,7 +18,17 @@ tickets([25, 100])
         // => NO. Vasya will not have enough money to give change to 100 dollars
 ```
 
-### Conclusion
+## Installation
+
+Code is written in Javascript and tested using Jasmine.
+
+```
+git@github.com:puyanwei/ticket-clerk.git
+cd ticket-clerk
+open SpecRunner.html
+```
+
+## Conclusion
 
 On having a pairing session and trying this out in Ruby first, it seems to me that it is indeed easier, and more readable than Javascript.
 
